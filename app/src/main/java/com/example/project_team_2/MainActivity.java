@@ -15,11 +15,17 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    RecyclerView recyclerView;
+    FloatingActionButton add_button;
+
 
     ImageView btnlogout,btnabout,btnfaq;
     FirebaseAuth mAuth;
@@ -29,6 +35,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_home);
+
+        recyclerView = findViewById(R.id.recyclerView);
+        add_button = findViewById(R.id.add_button);
+        add_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         btnlogout=findViewById(R.id.btnlogout);
         mAuth=FirebaseAuth.getInstance();
