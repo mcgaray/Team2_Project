@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project_Team_2"
         tools:targetApi="31">
+        <activity android:name=".AddActivity"
+            android:label="License Check"
+            android:parentActivityName=".MainActivity"
+            tools:ignore="Instantiatable" />
         <activity
             android:name=".Faq"
             android:exported="false" />
